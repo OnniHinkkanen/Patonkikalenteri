@@ -1,9 +1,13 @@
+import * as React from 'react';
+import dayjs from 'dayjs';
 import logo from './logo.svg';
 import './App.css';
+import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
 import { LocalizationProvider } from '@mui/x-date-pickers';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { DateCalendar } from '@mui/x-date-pickers/DateCalendar';
+import { StaticDatePicker } from '@mui/x-date-pickers/StaticDatePicker';
 
 /*
 function App() {
@@ -31,7 +35,12 @@ function App() {
 function App() {
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
-      <DateCalendar showDaysOutsideCurrentMonth fixedWeekNumber={6} />
+      <DemoContainer components={['StaticDatePicker']}>
+          <StaticDatePicker 
+            showDaysOutsideCurrentMonth 
+            fixedWeekNumber={6}
+            onChange={(newValue) => console.log(newValue.toDate())}/>
+      </DemoContainer>
       <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
