@@ -102,14 +102,6 @@ async function listEvents(auth) {
 
 authorize().then(listEvents).catch(console.error);
 
-// Get the OAuth2 client for making Google Calendar API requests.
-//gcal.initAuthorize(setAuth);
-
-function setAuth(auth) {
-    this.auth = auth;
-    console.log('\nServer is now running... Ctrl+C to end');
-}
-
 /**
  * Handles 'days' GET requests.
  * @param {object} req  The requests object provided by Express. See Express doc.
